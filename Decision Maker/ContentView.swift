@@ -31,6 +31,7 @@ struct ContentView: View {
                     Button("Pick option"){
                         showingAlert = true
                     }
+                    
                     .disabled(listofoptions[0].opt.isEmpty) //disables button if text is empty
                     .opacity(listofoptions[0].opt.isEmpty ? 0.5 : 1.0) //makes the opacity lower if button disabled
                     .frame(maxWidth: 150, maxHeight: 50)
