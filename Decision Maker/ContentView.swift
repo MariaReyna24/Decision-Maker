@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+struct option: Identifiable {
+    var id = UUID()
+    var opt : String
+}
+
 struct ContentView: View {
     let colors: [Color] = [.gray, .red, .orange, .yellow,
                               .green, .blue, .purple, .pink]
@@ -30,6 +35,7 @@ struct ContentView: View {
                     //This button allows you to pick a random element in the array
                     Button("Pick option"){
                         showingAlert = true
+                        listofoptions.shuffle()
                     }
                     
                     .disabled(listofoptions[0].opt.isEmpty) //disables button if text is empty
@@ -62,11 +68,7 @@ struct ContentView: View {
         }
     }
 
-    struct option: Identifiable {
-        var id = UUID()
-        var opt : String
-
-    }
+  
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
